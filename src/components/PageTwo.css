@@ -1,0 +1,16 @@
+.page-two {
+  background-color: #000;
+    animation: fadeInBottomLeft 0.8s forwards;
+  }
+  
+  @keyframes fadeInBottomLeft {
+    from {
+      transform: translate(-100%, 100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  

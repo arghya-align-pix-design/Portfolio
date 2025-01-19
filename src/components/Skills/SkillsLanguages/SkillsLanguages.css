@@ -1,0 +1,59 @@
+/* Styling for the programming languages skills page */
+
+/* Main container for the programming languages skills page */
+.skills-page.languages {
+  color: #f0e68c; /* Light gold text */
+  background-color: black; /* Black background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Title styling */
+.skills-page.languages h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffd700; /* Gold color for the title */
+}
+
+/* Skills container */
+.skills-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual skill item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222; /* Darker background for skill items */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s;
+}
+
+/* Skill item text */
+.skill-item p {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Hover effect */
+.skill-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
+}

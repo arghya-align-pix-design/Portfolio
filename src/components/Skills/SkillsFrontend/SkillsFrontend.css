@@ -1,0 +1,160 @@
+/* Main container for the frontend skills page */
+.skills-page.frontend {
+  color: #f0e68c; /* Light gold text */
+  background-color: black; /* Black background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Title styling */
+.skills-page.frontend h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffd700; /* Gold color for the title */
+}
+
+/* Container for the skill items */
+.skills-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual skill item styling */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222; /* Dark background for skill items */
+  padding: 20px;
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden; /* To prevent circuit animation overflow */
+  transition: transform 0.3s;
+}
+
+/* Skill item text styling */
+.skill-item p {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  animation: flickerOff 0.3s ease-in-out infinite; /* Default off flickering */
+}
+
+
+/* Neon electric circuit effect around skill items */
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 2px;
+  border: 2px solid transparent;
+  /* border-image-source: linear-gradient(90deg, #00ffcc, #ff00ff, #00ccff);*/
+  /* animation: moveLeftToRight 3s linear infinite; /* Smooth left-to-right animation */
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.7), rgba(0, 255, 255, 0.5));
+  /*border-image-slice: 1;*/ 
+  background-size: 300%;;
+  animation: moveLeftToRight 3s linear infinite; /* Smooth left-to-right animation */
+  z-index: -1; /* Place behind the skill card */
+  opacity: 0; /* Hidden by default */
+  background-size: 400% 400%; /* For glowing animation */
+  animation: electricGlow 4s infinite linear;
+}
+
+/* Side glow: moving top-to-bottom */
+.skill-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px; /* Thin strip for the side glow */
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 0, 0.5), rgba(255, 0, 255, 0.7), rgba(255, 255, 0, 0.5));
+  animation: moveTopToBottom 3s linear infinite; /* Smooth top-to-bottom animation */
+  z-index: -1; /* Behind the skill item */
+}
+
+/* Keyframes for top glow (left-to-right) */
+@keyframes moveLeftToRight {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+/* Keyframes for side glow (top-to-bottom) */
+@keyframes moveTopToBottom {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+/* Electric circuit animation */
+@keyframes electricGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Flicker animation for text */
+@keyframes flickerOn {
+  0%, 100% {
+    text-shadow: 
+    0 0 8px rgba(255, 215, 0, 0.6), 
+    0 0 15px rgba(255, 215, 0, 0.4), 
+    0 0 30px rgba(255, 215, 0, 0.2);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 
+      0 0 5px rgba(255, 215, 0, 0.5), 
+      0 0 10px rgba(255, 215, 0, 0.3), 
+      0 0 20px rgba(255, 215, 0, 0.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes flickerOff {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+
+/* Show circuit and flicker text on hover */
+.skill-item:hover::before {
+  opacity: 1;
+}
+
+.skill-item:hover p {
+  animation: flickerOn 0.5s ease-in-out infinite;
+}

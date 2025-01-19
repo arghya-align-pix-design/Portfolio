@@ -1,0 +1,75 @@
+/* RecentAchievements.css */
+.recent-achievements-page {
+    color: silver;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .recent-achievements-page h2 {
+    color: silver;
+    margin-bottom: 20px;
+  }
+  
+  /* List styling */
+  .achievements-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .achievement-item {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .achievement-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Animation for entry and exit */
+  .recent-achievements-page.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .recent-achievements-page.fade-out {
+    animation: fadeOut 0.5s forwards;
+  }
+  
+  /* Bounce effect */
+  .achievement-item:hover {
+    animation: bounce 0.4s ease-in-out;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Fade animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
