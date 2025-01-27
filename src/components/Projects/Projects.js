@@ -11,7 +11,7 @@ function Projects({ transitionClass }) {
     },
     {
       name: "Perfume Site",
-      link: "https://www.linkedin.com/in/arghya-dip-paul-2668951b6",
+      link: "https://fragrance-16t4.onrender.com",
       description: "An e-commerce platform for showcasing perfumes.",
     },
   ];
